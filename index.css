@@ -100,6 +100,7 @@ button {
 button,
 input[type="email"] {
     border: none;
+    width: 100%;
 }
 input[type="email"]:focus {
     outline: none;
@@ -167,12 +168,19 @@ input:invalid ~ .error-message {
     width: 45rem;
 }
 .width-full {
-    /* TODO : taille finale width: 90rem;*/
-    width: 70rem;
+    width: 90rem;
 }
 
 .background-color-middle {
     background: hsl(var(--dark-blue-secondary));
+}
+
+.two-thirds {
+    width: 66.66%;
+    margin-right: 1rem;
+}
+.one-thirds {
+    width: 33.33%;
 }
 
 /* nav */
@@ -197,6 +205,9 @@ nav ul a:hover {
 }
 
 /* main message */
+.main-message {
+    margin-bottom: 5rem;
+}
 
 li {
     margin: 0 2rem;
@@ -212,6 +223,19 @@ h1 {
     font-family: var(--ff-body);
     font-weight: 700;
     letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    font-size: var(--fs-600);
+}
+
+.bg-curvy-desktop {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+.block-curvy-desktop {
+    position: relative;
+    height: 10rem;
 }
 
 .subtitle {
@@ -222,21 +246,7 @@ h1 {
     font-size: var(--fs-300);
 }
 .button-wrapper {
-    margin-top: 10rem;
     position: relative;
-}
-.button-wrapper::before {
-    background: url(images/bg-curvy-desktop.svg);
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    z-index: -1;
 }
 .button {
     text-decoration: none;
@@ -247,7 +257,7 @@ h1 {
     );
     padding: 1rem 2rem;
     border-radius: 25px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     text-align: center;
 }
 .button:hover {
@@ -276,17 +286,45 @@ h1 {
     content: "toot";
 }
 
+/* block arguments */
+.arguments img {
+    height: 70px;
+}
+.arguments small {
+    text-align: center;
+    display: block;
+    line-height: 1rem;
+}
+.argument {
+    margin: 2.5rem 2rem;
+}
+.argument h2 {
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
 /* block productive */
-.block-productive-left {
+.block-productive-wrapper {
+    padding: 5rem;
+}
+.block-productive-wrapper p {
+    margin-bottom: 1rem;
+}
+.block-productive-wrapper img {
+    width: 100%;
+}
+.block-productive-right {
+    margin-left: 5rem;
     flex-direction: column;
     justify-content: center;
 }
 
+
 /* block testimonies */
 .block-testimonies {
     content: " ";
-    background: url(images/bg-quotes.png);
-    background-repeat: no-repeat;
+    background: url(images/bg-quotes.png) no-repeat;
     padding-top: 1rem;
 }
 .block-testimonies img {
@@ -315,8 +353,19 @@ h1 {
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+.block-early-access p {
+    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.block-early-access form {
+    align-items: start;
+}
 
 /* footer */
+footer {
+    margin-top: 3rem;
+}
 footer ul {
     flex-direction: column;
 }
