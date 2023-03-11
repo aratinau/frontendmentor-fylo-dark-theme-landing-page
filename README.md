@@ -45,7 +45,7 @@ I used only flexbox, no media query for images, and HTML validator (so no JS to 
 
 I learned to use flexbox.
 
-I also used `srcset` in `<picture>` to not use media query on picture display.
+I used `srcset` in `<picture>` to not use media query on picture display.
 
 
 ```html
@@ -57,7 +57,7 @@ I also used `srcset` in `<picture>` to not use media query on picture display.
 </picture>
 ```
 
-I also use the HTML validator to avoid JS
+I used the HTML validator to avoid JS
 
 ```html
 <input type="email" placeholder="email@example.com">
@@ -72,5 +72,15 @@ I also use the HTML validator to avoid JS
 }
 input:invalid ~ .error-message {
   visibility: visible;
+}
+```
+
+I used `text-underline-offset` to keep the underline by default
+
+```css
+.link, a {
+    color: hsl(var(--cyan));
+    text-underline-offset: 8px;
+    position: relative;
 }
 ```
