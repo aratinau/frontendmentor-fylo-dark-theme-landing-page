@@ -40,9 +40,12 @@
       <a href="" class="button">Get Started</a>
     </div>
 
-    <div class="block-curvy-desktop">
-      <img class="bg-curvy-desktop" src="images/bg-curvy-desktop.svg" />
-    </div>
+    <picture class="block-curvy-desktop">
+      <source
+              media="(max-width: 375px)"
+              srcset="images/bg-curvy-mobile.svg">
+      <img class="bg-curvy-desktop" src="images/bg-curvy-desktop.svg" alt="background curvy desktop" />
+    </picture>
 
     <div class="background-color-middle arguments">
       <div class="d-flex center-block width-middle">
@@ -137,8 +140,8 @@
       </div>
     </div>
 
-    <div class="container-full-width">
-      <div class="block-early-access">
+    <div class="container-full-width block-early-access">
+      <div class="block-early-wrapper">
         <h2 class="big-title">Get early access today</h2>
 
         <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any
@@ -154,7 +157,7 @@
       </div>
     </div>
 
-    <div class="center-block width-full">
+    <div class="footer-logo center-block width-full">
         <img src="images/logo.svg" alt="" />
     </div>
   </div>
@@ -198,7 +201,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="text-align-center">
         <i class="fa-brands fa-facebook-f"></i>
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-instagram"></i>
