@@ -5,15 +5,15 @@
 :root {
     /* colors */
     --white: 0, 0%, 100%;
+    --black: 0, 0%, 0%;
 
     /* colors primary */
     --dark-blue-primary: 217, 28%, 15%;
     --dark-blue-secondary: 218, 28%, 13%;
     --dark-blue-footer-background: 216, 53%, 9%;
-    --dark-blue-testimonials---dark-blue-footer-background: 219, 30%, 18%;
+    --dark-blue-testimonials-background: 219, 30%, 18%;
 
     /* colors accent */
-    --dark-cyan: 176, 68%, 64%;
     --cyan: 176, 68%, 64%;
     --blue: 198, 60%, 50%;
     --ligh-red: 0, 100%, 63%;
@@ -75,6 +75,8 @@ body {
     font-family: var(--ff-body);
     font-weight: 400;
     font-size: var(--fs-200);
+    background-color: hsl(var(--dark-blue-footer-background));
+    color: hsl(var(--white));
 }
 
 /* make images easier to work with */
@@ -84,12 +86,35 @@ picture {
     display: block;
 }
 
-/* make form elements easier to work with */
+/* forms */
 input,
 button,
 textarea,
 select {
     font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+button,
+input[type="email"] {
+    border: none;
+}
+input[type="email"]:focus {
+    outline: none;
+}
+input[type="email"] {
+    border-radius: 25px;
+    padding: 1rem 2rem;
+}
+.error-message {
+    visibility: hidden;
+    font-weight: 300;
+    color: hsl(var(--ligh-red));
+}
+input:invalid ~ .error-message {
+    visibility: visible;
 }
 
 /* remove animations for people who've turned them off */
@@ -108,3 +133,263 @@ select {
 /* ------------------- */
 /* ------------------- */
 /* ------------------- */
+
+/* utils */
+.center-block {
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.m-b1 {
+    margin-bottom: 1rem;
+}
+.p-b10 {
+    padding-bottom: 10rem;
+}
+.text-align-center {
+    text-align: center;
+}
+
+.container {
+    width: 90rem;
+}
+
+.container-full-width {
+    background: linear-gradient(0deg,
+        hsl(var(--dark-blue-footer-background)) 50%,
+        hsl(var(--dark-blue-secondary)) 50%);
+}
+
+.width-middle {
+    width: 45rem;
+}
+.width-full {
+    /* TODO : taille finale width: 90rem;*/
+    width: 70rem;
+}
+
+.background-color-middle {
+    background: hsl(var(--dark-blue-secondary));
+}
+
+/* nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+nav ul a {
+    text-decoration: none;
+    color: hsl(var(--white));
+}
+nav ul a:hover {
+    text-decoration: underline;
+    text-underline-offset: auto;
+}
+
+/* main message */
+
+li {
+    margin: 0 2rem;
+    list-style: none;
+}
+
+h1 {
+    font-size: calc(var(--fs-500) + 1vw);
+    width: 45rem;
+    margin: 0 auto;
+}
+.big-title {
+    font-family: var(--ff-body);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.subtitle {
+    text-align: center;
+    width: 25rem;
+    margin: 0 auto;
+    line-height: 1.5rem;
+    font-size: var(--fs-300);
+}
+.button-wrapper {
+    margin-top: 10rem;
+    position: relative;
+}
+.button-wrapper::before {
+    background: url(images/bg-curvy-desktop.svg);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -1;
+}
+.button {
+    text-decoration: none;
+    color: hsl(var(--white));
+    background: linear-gradient(45deg,
+        hsl(var(--cyan)) 0%,
+        hsl(var(--blue)) 100%
+    );
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+.button:hover {
+    background: linear-gradient(45deg,
+        hsl(176, 68%, 76%) 0%,
+        hsl(198, 60%, 64%) 100%
+    );
+}
+.link, a {
+    color: hsl(var(--cyan));
+    text-underline-offset: 8px;
+    position: relative;
+}
+.link:hover, a:hover {
+    color: hsl(var(--white));
+}
+.link::after {
+    width: 16px;
+    position: absolute;
+    content: " ";
+    background-image: url(images/icon-arrow.svg);
+    height: 16px;
+    margin-left: 3px;
+}
+.link::after::after {
+    content: "toot";
+}
+
+/* block productive */
+.block-productive-left {
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* block testimonies */
+.block-testimonies {
+    content: " ";
+    background: url(images/bg-quotes.png);
+    background-repeat: no-repeat;
+    padding-top: 1rem;
+}
+.block-testimonies img {
+    height: 30px;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+.testimonie {
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: var(--fs-200);
+    line-height: 1.1rem;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: hsl(var(--dark-blue-testimonials-background));
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(3, 4, 4, 0.15) 0px 2px 6px 2px;
+}
+
+/* block early access */
+.block-early-access {
+    width: 50rem;
+    background: hsl(var(--dark-blue-secondary));
+    margin: 5rem;
+    padding: 5rem;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/* footer */
+footer ul {
+    flex-direction: column;
+}
+
+/* block end */
+
+.block-end {
+    background: hsl(var(--dark-blue-footer-background));
+}
+.block-end-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.block-end-wrapper div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.block-end-wrapper div:first-child {
+    padding: 0;
+}
+.block-end-wrapper div:last-child {
+    padding: 0;
+}
+.block-end-wrapper ul {
+    align-items: start;
+    margin: 0;
+}
+.block-end-wrapper li {
+    margin: 0;
+    margin-bottom: .5rem;
+}
+.block-end-wrapper li a {
+    text-decoration: none;
+    color: hsl(var(--white));
+}
+.block-end-wrapper li a:hover {
+    font-weight: 700;
+}
+.block-end-wrapper img {
+    margin-right: .5rem;
+}
+
+.location-block {
+    display: flex;
+    align-items: start;
+}
+
+.location-text {
+    width: 25rem;
+}
+
+.fa-brands {
+    border: 1px solid hsl(var(--white));
+    width: 30px;
+    text-align: center;
+    border-radius: 50%;
+    padding: .5em;
+    margin-right: .1rem;
+    margin-left: .1rem;
+}
+.fa-brands:hover {
+    border: 1px solid hsl(var(--cyan));
+    cursor: pointer;
+}
+.fa-brands:hover::before {
+    color: hsl(var(--cyan));
+}
+
+/* attribution */
+
+.attribution {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
