@@ -443,6 +443,18 @@ footer ul {
 }
 
 @media (max-width: 90rem) {
+    .width-full {
+        width: 100%;
+    }
+    .width-full.block-productive-wrapper {
+        align-items: center
+    }
+    .block-testimonies {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 45rem) {
     nav {
         margin: 1rem;
         align-items: center;
@@ -455,9 +467,6 @@ footer ul {
     }
 
     .width-middle {
-        width: 100%;
-    }
-    .width-full {
         width: 100%;
     }
     .d-flex {
